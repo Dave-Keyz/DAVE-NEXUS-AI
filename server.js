@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 3000;
 // Read JSON requests and serve the website.
 app.use(express.json({ limit: "20kb" }));
 app.use(express.static(path.join(__dirname, "public")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 
 // Limit repeated chat requests.
 const chatLimiter = rateLimit({
