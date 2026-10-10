@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090710">
+  <meta
+    name="description"
+    content="DAVE NEXUS AI — Your intelligent AI assistant."
+  >
+  <title>DAVE NEXUS AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">N</div>
+        <div class="brand-copy">
+          <span class="brand-name">DAVE NEXUS</span>
+          <span class="brand-subtitle">ARTIFICIAL INTELLIGENCE</span>
+        </div>
+        <button
+          class="icon-button sidebar-close"
+          id="closeSidebar"
+          aria-label="Close sidebar"
+        >×</button>
+      </div>
+
+      <button class="new-chat-button" id="newChat">
+        <span class="new-chat-plus">+</span>
+        <span>New conversation</span>
+        <span class="new-chat-shortcut">⌘ K</span>
+      </button>
+
+      <div class="sidebar-label">WORKSPACE</div>
+
+      <button class="nav-item active" id="homeButton">
+        <span class="nav-icon">⌂</span>
+        <span>AI Chat</span>
+        <span class="nav-dot"></span>
+      </button>
+
+      <button class="nav-item" id="historyButton">
+        <span class="nav-icon">◷</span>
+        <span>Chat history</span>
+      </button>
+
+      <div class="history-section">
+        <div class="sidebar-label">RECENT CONVERSATIONS</div>
+        <div id="historyList" class="history-list">
+          <p class="history-empty">Your conversations will appear here.</p>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="plan-card">
+          <div class="plan-orb">✦</div>
+          <div class="plan-copy">
+            <strong>NEXUS CORE</strong>
+            <span>Your AI workspace</span>
+          </div>
+          <span class="plan-status"></span>
+        </div>
+
+        <div class="profile">
+          <div class="profile-avatar">D</div>
+          <div class="profile-copy">
+            <strong>DAVE NEXUS</strong>
+            <span>Personal workspace</span>
+          </div>
+          <span class="profile-menu">•••</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button
+            class="icon-button menu-button"
+            id="openSidebar"
+            aria-label="Open sidebar"
+          >☰</button>
+
+          <div class="breadcrumb">
+            <span>DAVE NEXUS</span>
+            <span class="breadcrumb-divider">/</span>
+            <strong>AI Chat</strong>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="connection-status">
+            <span class="connection-dot"></span>
+            <span>AI WORKSPACE</span>
+          </div>
+          <button
+            class="icon-button"
+            id="clearChat"
+            title="Clear current conversation"
+            aria-label="Clear current conversation"
+          >↻</button>
+        </div>
+      </header>
+
+      <section class="chat-viewport" id="chatViewport">
+        <div class="welcome-screen" id="welcomeScreen">
+          <div class="hero-symbol">
+            <div class="hero-ring hero-ring-one"></div>
+            <div class="hero-ring hero-ring-two"></div>
+            <div class="hero-core">
+              <span>✦</span>
+            </div>
+            <span class="hero-spark spark-one"></span>
+            <span class="hero-spark spark-two"></span>
+            <span class="hero-spark spark-three"></span>
+          </div>
+
+          <div class="hero-eyebrow">
+            <span class="eyebrow-line"></span>
+            YOUR INTELLIGENCE, EXPANDED
+            <span class="eyebrow-line"></span>
+          </div>
+
+          <h1>
+            Think beyond.<br>
+            <span>Build beyond.</span>
+          </h1>
+
+          <p class="hero-description">
+            Meet your intelligent workspace for ideas, discoveries,
+            problem-solving and everything you imagine.
+          </p>
+
+          <div class="suggestion-grid">
+            <button
+              class="suggestion-card"
+              data-prompt="Help me brainstorm a unique and impressive project idea."
+            >
+              <span class="suggestion-icon purple">✳</span>
+              <span class="suggestion-copy">
+                <strong>Brainstorm ideas</strong>
+                <span>Turn your thoughts into plans</span>
+              </span>
+              <span class="suggestion-arrow">↗</span>
+            </button>
+
+            <button
+              class="suggestion-card"
+              data-prompt="Teach me a new coding concept step by step as a beginner."
+            >
+              <span class="suggestion-icon blue">⌘</span>
+              <span class="suggestion-copy">
+                <strong>Learn to code</strong>
+                <span>Understand something new</span>
+              </span>
+              <span class="suggestion-arrow">↗</span>
+            </button>
+
+            <button
+              class="suggestion-card"
+              data-prompt="Help me write a clear, professional piece of writing."
+            >
+              <span class="suggestion-icon pink">✎</span>
+              <span class="suggestion-copy">
+                <strong>Create something</strong>
+                <span>Write, design and explore</span>
+              </span>
+              <span class="suggestion-arrow">↗</span>
+            </button>
+
+            <button
+              class="suggestion-card"
+              data-prompt="Explain an interesting scientific discovery in simple terms."
+            >
+              <span class="suggestion-icon gold">◎</span>
+              <span class="suggestion-copy">
+                <strong>Explore knowledge</strong>
+                <span>Discover how things work</span>
+              </span>
+              <span class="suggestion-arrow">↗</span>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="messages-container"
+          id="messagesContainer"
+          aria-live="polite"
+          aria-label="Conversation messages"
+        ></div>
+      </section>
+
+      <footer class="composer-area">
+        <div class="composer-wrap">
+          <form class="composer" id="chatForm">
+            <textarea
+              id="messageInput"
+              rows="1"
+              maxlength="4000"
+              placeholder="Message DAVE NEXUS AI..."
+              aria-label="Your message"
+              required
+            ></textarea>
+
+            <div class="composer-toolbar">
+              <div class="composer-tools">
+                <span class="composer-hint">
+                  <span class="hint-star">✦</span>
+                  Ask anything. Explore everything.
+                </span>
+              </div>
+
+              <button
+                type="submit"
+                class="send-button"
+                id="sendButton"
+                aria-label="Send message"
+                title="Send message"
+              >
+                <span id="sendIcon">↑</span>
+              </button>
+            </div>
+          </form>
+
+          <p class="disclaimer">
+            DAVE NEXUS AI can make mistakes. Verify important information.
+          </p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+</body>
+</html>
